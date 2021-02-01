@@ -20,7 +20,8 @@ d3.json('data/maps/us-states.geo.json').then(function (mapData) {
 
 function drawMap (mapData, ele, size) {
 
-    let projection = d3.geoAlbersUsa()
+    // just showing you a composite projection specifically designed for the US map
+    let projection = d3.geoMercator()
         .fitSize([size.w, size.h], mapData);
 
     let geoPath = d3.geoPath(projection);
